@@ -1,33 +1,37 @@
-import { RiBookLine } from "react-icons/ri";
-import { PiBrainLight } from "react-icons/pi";
-import { PiSmileyNervousDuotone } from "react-icons/pi";
-import { IoSearch } from "react-icons/io5";
+
+import BookIcon from "../assets/book-duotone.svg"
+import MagnifyingGlass from "../assets/magnifying-glass-duotone.svg"
+import Brain from "../assets/brain-duotone.svg"
+import Smiely from "../assets/smiley-nervous-duotone.svg"
+
+
 export default function ProblemSection() {
   const cards = [
     {
-      icon: <RiBookLine className="text-red-500  text-[60px]" />,
+      icon: <img src={BookIcon} alt="Book Icon" className="w-[50px] h-[50px]" />,
       title: "Mauvaise gestion des notes",
       description:
         "Les étudiants croulent sous des piles de notes, ayant du mal à les organiser et à les réviser efficacement.",
     },
     {
-      icon: <PiBrainLight className="text-purple-500 text-[60px]" />,
+      icon: <img src={Brain} alt="Brain Icon" className="w-[50px] h-[50px]" />,
       title: "Faible rétention des informations",
       description:
         "Malgré des heures passées à réviser, de nombreux étudiants constatent qu’ils ne retiennent qu’une fraction des informations.",
     },
     {
-      icon: <PiSmileyNervousDuotone className="text-green-500 text-[60px]" />,
+      icon: <img src={Smiely} alt="Smiley Icon" className="w-[50px] h-[50px]" />,
       title: "Des révisions interminables",
       description: "Et si la clé était d’apprendre mieux, pas plus ?",
     },
     {
-      icon: <IoSearch className="text-orange-500 text-[60px]" />,
+      icon: <img src={MagnifyingGlass} alt="Magnifying Glass Icon" className="w-[50px] h-[50px]" />,
       title: "Absence de suivi des progrès",
       description:
         "Sans outils pour suivre leurs progrès, les étudiants ignorent s’ils s’améliorent, ce qui limite leur efficacité.",
     },
   ];
+  
   return (
     <section className=" text-center bg-[#F6F5F4]">
       {/* Title and Description */}

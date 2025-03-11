@@ -115,7 +115,7 @@ export default function HeroSection() {
         {features.map((feature, index) => (
           <div
             key={index}
-            className={`flex border-t border-[#1e1e1e] justify-center items-center ${
+            className={`flex border-t border-[#1e1e1e] h-full justify-center items-center ${
               index !== 3 ? "lg:border-r border-[#1e1e1e]" : ""
             }`}
           >
@@ -138,13 +138,13 @@ export default function HeroSection() {
         ))}
 
         {/* Vertical Gradient Line */}
-        <div className="hidden lg:block absolute top-0 bottom-0 left-1/2  transform -translate-x-1/2 w-[2px] bg-gradient-to-b from-orange-500 via-pink-500 to-purple-500"></div>
-      
-
+        <div className="hidden lg:block absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-[0.8px]">
+          <div className="h-full bg-gradient-to-b from-orange-500 via-purple-700 to-orange-500"></div>
+        </div>
       </div>
 
       {/* Divider with Button and Full Horizontal Line */}
-      <div className="relative flex items-center justify-between w-full mt-6">
+      <div className="relative flex items-center justify-between w-full ">
         {/* Left Line + Dot */}
         <div className="flex items-center w-full max-w-4xl">
           <div className="w-full h-[1px] bg-[#1e1e1e]"></div>
@@ -154,7 +154,7 @@ export default function HeroSection() {
         {/* Center Button with Gradient Border */}
         <div className="relative flex items-center justify-center mx-4">
           {/* Top Gradient Border */}
-          <div className="absolute z-10 top-0 left-1/2 transform -translate-x-1/2 w-[70%] h-[2px] bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500"></div>
+          <div className="absolute z-10 top-0 left-1/2 transform -translate-x-1/2 w-[70%] h-[0.3px] bg-gradient-to-r from-red-500 via-red-500 via-50% to-purple-800"></div>
 
           {/* Button */}
           <button className="relative px-[1px] py-[1px] text-white font-semibold rounded-full border border-[#1e1e1e]">
@@ -171,28 +171,30 @@ export default function HeroSection() {
           <div className="w-full h-[1px] bg-[#1e1e1e]"></div>
         </div>
       </div>
-
     </div>
 
-    <div className="relative w-full pb-20 overflow-hidden">
-    <Marquee>
-      <MarqueeGroup>
-        {badges.map((el, index) => (
-          <ImageGroup key={index}>
-            <div className={`${el.color} w-2 h-2 rounded-full`}></div>
-            <p className="text-nowrap ">{el.text}</p>
-          </ImageGroup>
-        ))}
-      </MarqueeGroup>
-      <MarqueeGroup>
-        {badges.map((el, index) => (
-          <ImageGroup key={`dup-${index}`}>
-            <div className={`${el.color} w-2 h-2 rounded-full`}></div>
-            <p className="text-nowrap ">{el.text}</p>
-          </ImageGroup>
-        ))}
-      </MarqueeGroup>
-    </Marquee>
+    <div className="relative bg-black w-full pb-20 overflow-hidden">
+   
+   
+<Marquee>
+<MarqueeGroup>
+  {badges.map((el, index) => (
+    <ImageGroup key={index}>
+      <div className={`${el.color} w-2 h-2 rounded-full`}></div>
+      <p className="text-nowrap ">{el.text}</p>
+    </ImageGroup>
+  ))}
+</MarqueeGroup>
+<MarqueeGroup>
+  {badges.map((el, index) => (
+    <ImageGroup key={`dup-${index}`}>
+      <div className={`${el.color} w-2 h-2 rounded-full`}></div>
+      <p className="text-nowrap ">{el.text}</p>
+    </ImageGroup>
+  ))}
+</MarqueeGroup>
+
+</Marquee> 
   </div>
     </div>
   );
@@ -212,7 +214,7 @@ const Marquee = styled.div`
   width: 90%; /* Adjust width here */
   overflow: hidden;
   user-select: none;
-  position: relative;
+
   justify-content: center; /* Ensures equal distribution */
 
   mask-image: linear-gradient(
@@ -225,19 +227,46 @@ const Marquee = styled.div`
 `;
 
 
+// const common = css`
+//   flex-shrink: 0;
+//   display: flex;
+//   align-items: center;
+//   gap: 16px;
+//   white-space: nowrap;
+//   width: max-content;
+//   animation: ${scrollX} 30s linear infinite;
+// `;
 const common = css`
   flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 16px;
   white-space: nowrap;
+  min-width: 100%;
   width: max-content;
   animation: ${scrollX} 30s linear infinite;
 `;
 
+// const MarqueeGroup = styled.div`
+//   ${common}
+// `;
 const MarqueeGroup = styled.div`
   ${common}
+  justify-content: space-around;
 `;
+
+
+// const ImageGroup = styled.div`
+//   display: flex;
+//   align-items: center;
+//   background: #1e1e1e;
+//   color: white;
+//   padding: 10px 20px;
+//   border-radius: 10px;
+//   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+//   gap: 10px;
+// `;
+
 
 const ImageGroup = styled.div`
   display: flex;
@@ -248,18 +277,5 @@ const ImageGroup = styled.div`
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
   gap: 10px;
-`;
-
-const Dot = styled.div`
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: ${(props) => props.color || "#ff4757"};
-`;
-
-const Image = styled.img`
-  object-fit: contain;
-  width: 100px;
-  height: 100px;
-  border-radius: 8px;
+  min-width: fit-content;
 `;

@@ -158,50 +158,7 @@ const HeroSection = () => {
         </div>
       </div>
       <h1 className="font-[500] text-[18px] mt-2 ">Utilisés par des étudiants de</h1>
-      {/* <div className="relative w-[390px] md:w-full overflow-hidden mask-gradient">
-      <div className="absolute inset-0 pointer-events-none"></div>
-
-      <div className="flex space-x-6 mt-10 animate-marquee">
-        {badges.map((item, index) => (
-          <div
-            key={index}
-            className="rounded-lg flex justify-center items-center"
-          >
-            <div
-              className={`
-                ${index === 2
-                  ? "w-[100px] h-[130px] sm:w-[80px] sm:h-[100px]"
-                  : "w-[160px] h-[160px] sm:w-[120px] sm:h-[100px]"}
-              `}
-            >
-              <img
-                src={item.image}
-                alt="Badge"
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <style>{`
-        @keyframes marquee {
-          from { transform: translateX(100%); }
-          to { transform: translateX(-100%); }
-        }
-
-        .animate-marquee {
-          display: flex;
-          gap: 16px;
-          width: max-content;
-          animation: marquee 40s linear infinite;
-        }
-
-        .mask-gradient {
-          -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
-        }
-      `}</style>
-    </div> */}
+    
 
 <div className="relative w-[390px] md:w-full overflow-hidden mask-gradient">
 <div className="absolute inset-0 pointer-events-none"></div>
@@ -252,7 +209,7 @@ const Marquee = styled.div`
 
   mask-image: linear-gradient(
     to right,
-    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 0) 2%,
     hsl(0 0% 0% / 1) 10%,
     hsl(0 0% 0% / 1) 90%,
     hsl(0 0% 0% / 0)
