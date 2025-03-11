@@ -1,0 +1,9 @@
+You need to "copy" the following page: https://whole-minimalist-411600.framer.app/ (which was made with Framer) into a new NextJS / React project using tailwindcss.
+The style and all animations of the page must be done.
+The page must be responsive like the original.
+The NextJS version for the project is Next.js v14.2.23
+The React version for the project is react: "18.2.0",
+react-dom: "18.2.0"
+
+The sections of the page must be separated into several React components: header (navbar), Footer etc.
+For animations you can use Framer Motion or GSAP whichever is best for you.

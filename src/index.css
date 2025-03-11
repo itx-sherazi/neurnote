@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Shift only half to create loop effect */
+  }
+  
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 10s linear infinite;
+  }
+  
